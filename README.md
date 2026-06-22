@@ -2,7 +2,25 @@
 
 ## 📌 Project Overview
 This portfolio piece demonstrates an end-to-end data cleaning pipeline performed on a dataset of over 100,000 medical appointments. The goal of this project was to transform raw, messy operational data into a high-integrity, analytics-ready dataset to help determine the key drivers behind patient no-shows.
+## 🔄 Data Transformation (Before vs. After)
 
+To illustrate the cleaning depth, here is a snapshot of how the raw operational data was structured versus its final, high-integrity state:
+
+### ❌ Raw "Dirty" Dataset Sample
+| PatientId | AppointmentID | Gender | ScheduledDay | Age | Neighbourhood | No-show |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| 2.31E+11 | 5642903 | F   | 2016-04-29T16:08:27Z | -1 |  JARDIM CAMBURI | No |
+| 44452185 | 5642494 | M | 2016-04-29T14:43:56Z | 62 | JARDIM CAMBURI  | no |
+| 9.92E+13 | 5514122 | f | 2016-04-29T07:13:31Z | 115 | MARIA ORTIZ | YES |
+
+###  Final Cleaned Dataset Sample
+| Patient ID | Appointment ID | Gender | Scheduled Date | Age | Audit Age Tracker | Neighborhood | No-Show |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| 231421000000 | 5642903 | Female | 2016-04-29 | 0 | Flagged (Negative Age) | Jardim Camburi | No |
+| 000444521852 | 5642494 | Male | 2016-04-29 | 62 | Verified | Jardim Camburi | No |
+| 992415000000 | 5514122 | Female | 2016-04-29 | 115 | Flagged (Review >100) | Maria Ortiz | Yes |
+
+*Key Transformations Shown: Standardized ID notation, uniform text casing, stripped whitespace, normalized date strings, corrected Boolean logic (Yes/No), and initialized the structural anomaly tracker (`audit_age`).*
 -----
 
 ## 🛠️ Data Integrity & Auditing Workflow
