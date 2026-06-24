@@ -60,3 +60,7 @@ To guarantee absolute accuracy, the dataset underwent a strict **Human-in-the-Lo
 ## 📁 Repository Files
 * `cleaned--no-show-appointments.csv`: The final, optimized CSV file.
 * `README.md`: Project documentation and portfolio presentation.
+---
+
+## 🗺️ Project Navigation Roadmap
+For freelance clients and technical reviewers, here is the recommended sequence to navigate this data integrity audit:
