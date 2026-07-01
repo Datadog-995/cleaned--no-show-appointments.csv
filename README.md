@@ -1,7 +1,7 @@
 # Medical Appointment No-Shows: Data Cleaning & Integrity Project
 
 ## Project Overview
-This project optimizes healthcare appointment logs using Python Pandas.
+This project optimizes healthcare appointment logs using Python Pandas and OpenRefine - to audit and format dataset.
 
 ## Business Problem
 Clinical revenue loss is significantly impacted by medical appointment no-shows. This analysis aims to understand and mitigate these factors.
